@@ -1,0 +1,1 @@
+/home/wato/rust_distributed_1/target/debug/server: /home/wato/rust_distributed_1/build.rs /home/wato/rust_distributed_1/proto /home/wato/rust_distributed_1/proto/comand.proto /home/wato/rust_distributed_1/src/main.rs /home/wato/rust_distributed_1/target/debug/build/rust_distributed_1-eea31d62ccb4b84d/out/comand.rs

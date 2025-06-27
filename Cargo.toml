@@ -1,0 +1,21 @@
+[package]
+name = "rust_distributed_1"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[[bin]]
+name = "client" 
+path = "src/clients.rs"
+
+[dependencies]
+prost = "0.13.1"
+tokio = {version ="1.40.1", features = ["rt-multi-thread", "macros", "full"]}
+tonic = "0.13.1"
+
+
+[build-dependencies]
+tonic-build = "0.13.1"
