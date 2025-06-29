@@ -3,7 +3,12 @@ syntax = "proto3";
 package comand;
 
 service ComandService {
+    // Exécute une commande et la stocke dans la base de données
     rpc ExecuteCommand (CommandRequest) returns (CommandResponse);
+    // Récupère une commande par ID
+    rpc GetCommand (GetCommandRequest) returns (CommandResponse);
+    // Liste toutes les commandes en streaming
+    rpc ListCommandsStream (ListCommandsRequest) returns (stream CommandResponse);
 }
 
 message CommandRequest {
@@ -11,5 +16,16 @@ message CommandRequest {
 }
 
 message CommandResponse {
-    string output = 1;
+    int32 id = 1;
+    string command = 2;
+    string output = 3;
+    string created_at = 4; // Format ISO 8601
+}
+
+message GetCommandRequest {
+    int32 id = 1;
+}
+
+message ListCommandsRequest {
+    // Vide pour l'instant, peut inclure des filtres à l'avenir
 }
